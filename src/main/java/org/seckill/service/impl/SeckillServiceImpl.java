@@ -167,8 +167,7 @@ public class SeckillServiceImpl implements SeckillService {
             //获取result
             int result = MapUtils.getInteger(map, "result", -2);
             if (result == 1) {
-                SuccessKilled sk = successKilledDao.
-                        queryByIdWithSeckill(seckillId, userPhone);
+                SuccessKilled sk = successKilledDao.queryByIdWithSeckill(seckillId, userPhone);
                 return new SeckillExecution(seckillId, SeckillStateEnum.SUCCESS, sk);
             } else {
                 return new SeckillExecution(seckillId, SeckillStateEnum.stateOf(result));
