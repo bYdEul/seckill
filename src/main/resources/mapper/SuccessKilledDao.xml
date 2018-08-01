@@ -8,7 +8,7 @@
         <!--当出现主键冲突时(即重复秒杀时)，会报错;不想让程序报错，加入ignore、这样能通过返回的更新行数0 ， 1 来确定是否更新成功-->
         <!-- insert ignore表示，如果中已经存在相同的记录，则忽略当前新数据；-->
         INSERT INTO seckill.success_killed(seckill_id, user_phone,state)
-        VALUES (#{seckillId},#{userPhone},0)
+        VALUES (#{seckillId},#{userPhone},1)
     </insert>
 
     <select id="queryByIdWithSeckill" resultType="SuccessKilled">
